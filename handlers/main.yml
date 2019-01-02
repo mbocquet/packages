@@ -1,0 +1,5 @@
+---
+# handlers file for packages
+- name: update command-not-found
+  command: 'update-command-not-found'
+...

@@ -1,0 +1,8 @@
+---
+# defaults file for packages
+packages_add: []
+packages_del: []
+
+# extra packages to install
+packages_extra: []
+...

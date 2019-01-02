@@ -1,0 +1,9 @@
+---
+- name: "command-not-found"
+  package:
+    name: command-not-found
+  notify: update command-not-found
+  tags:
+    - packages
+    - command-not-found
+...

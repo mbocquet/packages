@@ -1,0 +1,29 @@
+---
+- name: "add"
+  package:
+    name: "{{ packages_add }}"
+  when: packages_add is defined
+  tags:
+    - packages
+    - add
+
+- name: "extra"
+  package:
+    name: "{{ packages_extra }}"
+  when: packages_extra is defined
+  tags:
+    - packages
+    - extra
+
+- name: "delete"
+  package:
+    name: "{{ packages_del }}"
+    state: absent
+    purge: yes
+  when: packages_del is defined
+  tags:
+    - packages
+    - del
+
+- include: "{{ ansible_os_family }}.yml"
+...

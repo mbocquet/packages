@@ -1,4 +1,14 @@
 ---
+- name: "delete"
+  package:
+    name: "{{ packages_del }}"
+    state: absent
+    purge: yes
+  when: packages_del is defined
+  tags:
+    - packages
+    - del
+
 - name: "command-not-found"
   package:
     name: command-not-found

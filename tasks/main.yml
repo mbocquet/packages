@@ -15,15 +15,5 @@
     - packages
     - extra
 
-- name: "delete"
-  package:
-    name: "{{ packages_del }}"
-    state: absent
-    purge: yes
-  when: packages_del is defined
-  tags:
-    - packages
-    - del
-
 - include: "{{ ansible_os_family }}.yml"
 ...

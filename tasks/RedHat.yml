@@ -1,2 +1,10 @@
 ---
+- name: "delete"
+  package:
+    name: "{{ packages_del }}"
+    state: absent
+  when: packages_del is defined
+  tags:
+    - packages
+    - del
 ...

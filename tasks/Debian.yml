@@ -1,6 +1,6 @@
 ---
 - name: "delete"
-  package:
+  apt:
     name: "{{ packages_del }}"
     state: absent
     purge: yes
@@ -8,12 +8,4 @@
   tags:
     - packages
     - del
-
-- name: "command-not-found"
-  package:
-    name: command-not-found
-  notify: update command-not-found
-  tags:
-    - packages
-    - command-not-found
 ...

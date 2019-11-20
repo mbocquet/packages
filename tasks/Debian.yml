@@ -1,11 +1,30 @@
 ---
-- name: "delete"
-  apt:
+- name: add
+  package:
+    name: "{{ packages_add }}"
+    force_apt_get: true
+  when: packages_add is defined
+  tags:
+    - packages
+    - add
+
+- name: extra
+  package:
+    name: "{{ packages_extra }}"
+    force_apt_get: true
+  when: packages_extra is defined
+  tags:
+    - packages
+    - extra
+
+- name: delete
+  package:
     name: "{{ packages_del }}"
+    force_apt_get: true
     state: absent
     purge: yes
   when: packages_del is defined
   tags:
     - packages
-    - del
+    - delete
 ...

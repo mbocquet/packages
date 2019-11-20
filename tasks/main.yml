@@ -1,19 +1,8 @@
 ---
-- name: "add"
-  package:
-    name: "{{ packages_add }}"
-  when: packages_add is defined
+- include_tasks: "{{ ansible_os_family }}.yml"
   tags:
     - packages
     - add
-
-- name: "extra"
-  package:
-    name: "{{ packages_extra }}"
-  when: packages_extra is defined
-  tags:
-    - packages
     - extra
-
-- include: "{{ ansible_os_family }}.yml"
+    - delete
 ...

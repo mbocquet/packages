@@ -2,7 +2,7 @@
 - name: add
   package:
     name: "{{ packages_add }}"
-    force_apt_get: true
+    force_apt_get: yes
   when: packages_add is defined
   tags:
     - packages
@@ -11,7 +11,7 @@
 - name: extra
   package:
     name: "{{ packages_extra }}"
-    force_apt_get: true
+    force_apt_get: yes
   when: packages_extra is defined
   tags:
     - packages
@@ -20,7 +20,7 @@
 - name: delete
   package:
     name: "{{ packages_del }}"
-    force_apt_get: true
+    force_apt_get: yes
     state: absent
     purge: yes
   when: packages_del is defined
